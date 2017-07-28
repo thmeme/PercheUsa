@@ -30,15 +30,6 @@ angular.module('app')
                         controller: 'LoginController'
                     }
                 }
-            })
-            .state('anon.register', {
-                url: '/register',
-                views: {
-                    'content@': {
-                        templateUrl: 'anon/register.html',
-                        controller: 'RegisterController'
-                    }
-                }
             });
         $stateProvider
             .state('user', {
@@ -60,6 +51,15 @@ angular.module('app')
                     'content@': {
                         templateUrl: 'user/dashboard.html',
                         controller: 'DashboardController'
+                    }
+                }
+            })
+            .state('user.register', {
+                url: '/register',
+                views: {
+                    'content@': {
+                        templateUrl: 'user/register.html',
+                        controller: 'RegisterController'
                     }
                 }
             })
