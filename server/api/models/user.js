@@ -9,6 +9,26 @@ const hashCode = (s) => s.split("").reduce((a, b) => {
 }, 0);
 
 const userSchema = new mongoose.Schema({
+  firstname: {
+    type: String,
+    required: true
+  },
+  lastname: {
+    type: String,
+    required: true
+  },
+  studentsphonenumber: {
+    type: String,
+  },
+  birthday: {
+    type: Number,
+  },
+  sex: {
+    type: String,
+  },
+  address: {
+    type: String,
+  },
   email: {
     type: String,
     required: [true, 'Email address is required'],
@@ -26,8 +46,149 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false
   },
-  login: {
+  legalguardian: {
     type: String
+  },
+  legalguardiansphonenumber: {
+    type: Number,
+  },
+  legalguardiansemail: {
+    type: String,
+    required: [true, 'Email address is required'],
+    validate: [function(email) {
+      return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+    }, 'Please fill a valid email address'],
+    match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address'],
+    unique: true
+  },
+  accomodation: {
+    type: String
+  },
+  tosmoke: {
+    type: Boolean,
+    default: false
+  },
+  health: {
+    type: Boolean,
+    default: false
+  },
+  healthdetail: {
+    type: String
+  },
+  diet: {
+    type: Boolean,
+    default: false
+  },
+  dietdetail: {
+    type: String
+  },
+  easygoing: {
+    type: Boolean,
+    default: false
+  },
+  relaxed: {
+    type: Boolean,
+    default: false
+  },
+  sensitive: {
+    type: Boolean,
+    default: false
+  },
+  ambitius: {
+    type: Boolean,
+    default: false
+  },
+  nervous: {
+    type: Boolean,
+    default: false
+  },
+  outgoing: {
+    type: Boolean,
+    default: false
+  },
+  serious: {
+    type: Boolean,
+    default: false
+  },
+  musical: {
+    type: Boolean,
+    default: false
+  },
+  artistic: {
+    type: Boolean,
+    default: false
+  },
+  flexible: {
+    type: Boolean,
+    default: false
+  },
+  quiet: {
+    type: Boolean,
+    default: false
+  },
+  talkative: {
+    type: Boolean,
+    default: false
+  },
+  determined: {
+    type: Boolean,
+    default: false
+  },
+  athletic: {
+    type: Boolean,
+    default: false
+  },
+  fastidius: {
+    type: Boolean,
+    default: false
+  },
+  absentminded: {
+    type: Boolean,
+    default: false
+  },
+  tolerant: {
+    type: Boolean,
+    default: false
+  },
+  stubborn: {
+    type: Boolean,
+    default: false
+  },
+  energetic: {
+    type: Boolean,
+    default: false
+  },
+  wellorganized: {
+    type: Boolean,
+    default: false
+  },
+  whyexchange: {
+    type: String
+  },
+  studentsdescription: {
+    type: String
+  },
+  friendsdescription: {
+    type: String
+  },
+  future: {
+    type: String
+  },
+  familydescription: {
+    type: String
+  },
+  familycomposition: {
+    type: String
+  },
+  transport: {
+    type: String
+  },
+  accomodationcapacity: {
+    type: String
+  },
+  notreceive: {
+    type: Boolean,
+    default: false
   }
 });
 
