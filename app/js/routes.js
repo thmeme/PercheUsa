@@ -18,7 +18,7 @@ angular.module('app')
                 views: {
                     'content@': {
                         templateUrl: 'anon/home.html',
-                        controller: 'MainController'
+                        controller: 'HomeController'
                     }
                 }
             })
@@ -28,15 +28,6 @@ angular.module('app')
                     'content@': {
                         templateUrl: 'anon/login.html',
                         controller: 'LoginController'
-                    }
-                }
-            })
-            .state('anon.register', {
-                url: '/register',
-                views: {
-                    'content@': {
-                        templateUrl: 'anon/register.html',
-                        controller: 'RegisterController'
                     }
                 }
             });
@@ -60,6 +51,15 @@ angular.module('app')
                     'content@': {
                         templateUrl: 'user/dashboard.html',
                         controller: 'DashboardController'
+                    }
+                }
+            })
+            .state('user.register', {
+                url: '/register',
+                views: {
+                    'content@': {
+                        templateUrl: 'user/register.html',
+                        controller: 'RegisterController'
                     }
                 }
             })
