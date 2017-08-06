@@ -17,8 +17,8 @@ Profile de {{user.email}}
     <label class="subHeaderUpdateProfile" for="">Password</label>
     <input id="password" type="password" class="form-control" ng-model="newuser.password" required placeholder="Mot de passe">
   </div>
-  <div class="input-group formProfile" ng-class="{'has-error': registration.phone.$error.number}">
+  <div class="input-group formProfile">
     <label for="inputPhone">Téléphone</label>
-    <input type="tel" name="tel" ng-model="newuser.studentsphonenumber" ng-intl-tel-input  data-initial-country="gb">
+    <input type="text" ng-model="newuser.studentsphonenumber" ng-intl-tel-input  data-initial-country="fr">
   </div>
   <button type="submit" class="postComment btn  btn-xs">Mettre à jour</button>
