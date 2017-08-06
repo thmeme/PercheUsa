@@ -1,1 +1,20 @@
 Profile de {{user.email}}
+<form class="form" name="loginForm" ng-submit="updateProfile()">
+                    <div ng-repeat="error in errors">{{error.error}}</div>
+                    <div class="input-group formProfile">
+                        <label class="subHeaderUpdateProfile" for="">Firstname</label>
+                        <input id="firstname" type="text" class="form-control" ng-model="newuser.firstname" required placeholder="Firstname">
+                    </div>
+                    <div class="input-group formProfile">
+                        <label class="subHeaderUpdateProfile" for="">Lastname</label>
+                        <input id="lastname" type="text" class="form-control" ng-model="newuser.lastname" required placeholder="">
+                    </div>
+                    <div class="input-group formProfile">
+                        <label class="subHeaderUpdateProfile" for="">Email</label>
+                        <input id="email" type="email" class="form-control" ng-model="newuser.email" required placeholder="">
+                    </div>
+                    <div class="input-group formProfile">
+                        <label class="subHeaderUpdateProfile" for="">Password</label>
+                        <input id="password" type="password" class="form-control" ng-model="newuser.password" required placeholder="">
+                    </div>
+                    <button type="submit" class="postComment btn  btn-xs">Mettre à jour</button>
