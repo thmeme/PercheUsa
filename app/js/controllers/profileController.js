@@ -5,19 +5,17 @@ angular.module('app')
     console.log($scope.newuser);
     console.log('id', $scope.user._id);
 
-    function Editprofile() {
+    function editProfile() {
       UserService.getOne($scope.user._id).then(function(res) {
         console.log('res getOne', res);
-        $scope.
+        $scope.newuser = res.data;
       });
     }
-    Editprofile();
+    editProfile();
 
     $scope.updateProfile = function() {
       UserService.update($scope.newuser._id, $scope.newuser).then(function(res) {
         console.log('update', res);
       });
     };
-
-
   });
