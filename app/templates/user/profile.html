@@ -19,6 +19,6 @@ Profile de {{user.email}}
   </div>
   <div class="input-group formProfile" ng-class="{'has-error': registration.phone.$error.number}">
     <label for="inputPhone">Téléphone</label>
-    <input type="text" name="tel" ng-model="newuser.studentsphonenumber" ng-intl-tel-input data-default-country="gb">
+    <input type="tel" name="tel" ng-model="newuser.studentsphonenumber" ng-intl-tel-input  data-initial-country="gb">
   </div>
   <button type="submit" class="postComment btn  btn-xs">Mettre à jour</button>
