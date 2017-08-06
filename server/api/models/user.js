@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema({
     required: true
   },
   studentsphonenumber: {
-    type: String,
+    type: Number,
   },
   birthday: {
     type: Date,
@@ -54,7 +54,6 @@ const userSchema = new mongoose.Schema({
   },
   legalguardiansemail: {
     type: String,
-    required: [true, 'Email address is required'],
     validate: [function(email) {
       return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
     }, 'Please fill a valid email address'],
