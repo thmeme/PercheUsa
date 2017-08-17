@@ -18,10 +18,10 @@ const userSchema = new mongoose.Schema({
     required: true
   },
   studentsphonenumber: {
-    type: Number,
+    type: String,
   },
   birthday: {
-    type: Date,
+    type: Array,
   },
   sex: {
     type: String,

@@ -3,22 +3,29 @@ Profile de {{user.email}}
   <div ng-repeat="error in errors">{{error.error}}</div>
   <div class="input-group formProfile">
     <label class="subHeaderUpdateProfile" for="">Firstname</label>
-    <input id="firstname" type="text" class="form-control" ng-model="newuser.firstname" required placeholder="Prénom">
+    <input id="firstname" type="text" class="form-control" ng-model="newUser.firstname" required placeholder="Prénom">
   </div>
   <div class="input-group formProfile">
     <label class="subHeaderUpdateProfile" for="">Lastname</label>
-    <input id="lastname" type="text" class="form-control" ng-model="newuser.lastname" required placeholder="Nom">
+    <input id="lastname" type="text" class="form-control" ng-model="newUser.lastname" required placeholder="Nom">
   </div>
   <div class="input-group formProfile">
     <label class="subHeaderUpdateProfile" for="">Email</label>
-    <input id="email" type="email" class="form-control" ng-model="newuser.email" required placeholder="Adresse mail">
+    <input id="email" type="email" class="form-control" ng-model="newUser.email" required placeholder="Adresse mail">
   </div>
   <div class="input-group formProfile">
     <label class="subHeaderUpdateProfile" for="">Password</label>
-    <input id="password" type="password" class="form-control" ng-model="newuser.password" required placeholder="Mot de passe">
+    <input id="password" type="password" class="form-control" ng-model="newUser.password" required placeholder="Mot de passe">
+  </div>
+  <div class="input-group formProfile formPhoneNumber">
+    <label class="subHeaderUpdateProfile">Téléphone</label>
+    <input type="text" ng-model="newUser.studentsphonenumber" ng-intl-tel-input  data-initial-country="fr" placeholder={{newUser.studentsphonenumber}}>
+    <p>{{newuser.studentsphonenumber}}</p>
   </div>
   <div class="input-group formProfile">
-    <label for="inputPhone">Téléphone</label>
-    <input type="text" ng-model="newuser.studentsphonenumber" ng-intl-tel-input  data-initial-country="fr">
+    <label class="subHeaderUpdateProfile" for="">Date de naissance</label>
+    <input id="birthday" type="date" class="form-control" ng-model="newUser.birthday" placeholder={{newUser.birthday | date: "dd-MM-yyyy"}}>
+    <p>{{newUser.birthday | date: "dd-MM-yyyy"}}</p>
   </div>
+
   <button type="submit" class="postComment btn  btn-xs">Mettre à jour</button>
