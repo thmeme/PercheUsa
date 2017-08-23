@@ -122,3 +122,9 @@ input[type=date]::-webkit-inner-spin-button, input[type=date]::-webkit-outer-spi
 .formPhoneNumber {
   display: grid;
 }
+.btnRadio {
+  display: flex;
+}
+.firstRadio {    
+margin-right: 2em;
+}

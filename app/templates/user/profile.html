@@ -1,31 +1,74 @@
-Profile de {{user.email}}
-<form class="form" name="loginForm" ng-submit="updateProfile()">
-  <div ng-repeat="error in errors">{{error.error}}</div>
-  <div class="input-group formProfile">
-    <label class="subHeaderUpdateProfile" for="">Firstname</label>
-    <input id="firstname" type="text" class="form-control" ng-model="newUser.firstname" required placeholder="Prénom">
-  </div>
-  <div class="input-group formProfile">
-    <label class="subHeaderUpdateProfile" for="">Lastname</label>
-    <input id="lastname" type="text" class="form-control" ng-model="newUser.lastname" required placeholder="Nom">
-  </div>
-  <div class="input-group formProfile">
-    <label class="subHeaderUpdateProfile" for="">Email</label>
-    <input id="email" type="email" class="form-control" ng-model="newUser.email" required placeholder="Adresse mail">
-  </div>
-  <div class="input-group formProfile">
-    <label class="subHeaderUpdateProfile" for="">Password</label>
-    <input id="password" type="password" class="form-control" ng-model="newUser.password" required placeholder="Mot de passe">
-  </div>
-  <div class="input-group formProfile formPhoneNumber">
-    <label class="subHeaderUpdateProfile">Téléphone</label>
-    <input type="text" ng-model="newUser.studentsphonenumber" ng-intl-tel-input  data-initial-country="fr" placeholder={{newUser.studentsphonenumber}}>
-    <p>{{newuser.studentsphonenumber}}</p>
-  </div>
-  <div class="input-group formProfile">
-    <label class="subHeaderUpdateProfile" for="">Date de naissance</label>
-    <input id="birthday" type="date" class="form-control" ng-model="newUser.birthday" placeholder={{newUser.birthday | date: "dd-MM-yyyy"}}>
-    <p>{{newUser.birthday | date: "dd-MM-yyyy"}}</p>
-  </div>
+<div class="container">
+  Profile de {{user.email}}
+  <form class="form" name="loginForm" ng-submit="updateProfile()">
+    <div ng-repeat="error in errors">{{error.error}}</div>
+    <div class="input-group formProfile">
+      <label class="subHeaderUpdateProfile" for="">Prénom</label>
+      <input id="firstname" type="text" class="form-control" ng-model="newUser.firstname" required placeholder="Prénom">
+    </div>
+    <div class="input-group formProfile">
+      <label class="subHeaderUpdateProfile" for="">Nom</label>
+      <input id="lastname" type="text" class="form-control" ng-model="newUser.lastname" required placeholder="Nom">
+    </div>
+    <div class="input-group formProfile">
+      <label class="subHeaderUpdateProfile" for="">Email</label>
+      <input id="email" type="email" class="form-control" ng-model="newUser.email" required placeholder="Adresse mail">
+    </div>
+    <div class="input-group formProfile">
+      <label class="subHeaderUpdateProfile" for="">Password</label>
+      <input id="password" type="password" class="form-control" ng-model="newUser.password" required placeholder="Mot de passe">
+    </div>
+    <div class="input-group formProfile formPhoneNumber">
+      <label class="subHeaderUpdateProfile">Téléphone</label>
+      <input type="text" ng-model="newUser.studentsphonenumber" ng-intl-tel-input ng-minlength="10" ng-maxlength="10" data-initial-country="fr" placeholder={{newUser.studentsphonenumber}}>
+      <!-- <p>{{newUser.studentsphonenumber}}</p> -->
+    </div>
+    <div class="input-group formProfile">
+      <label class="subHeaderUpdateProfile" for="">Date de naissance</label>
+      <input id="birthday" type="date" class="form-control" ng-model="newUser.birthday" placeholder={{newUser.birthday | date: "dd-MM-yyyy"}}>
+      <p>{{newUser.birthday | date: "dd-MM-yyyy"}}</p>
+    </div>
+    <div class="input-group formProfile">
+      <label class="subHeaderUpdateProfile" for="">Sexe</label>
+      <div class="form-group">
+        <div class="radio">
+          <label>
+              <input type="radio" name="sex" value="boy" ng-model="newUser.sex">
+              Masculin
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+              <input type="radio" name="sex" value="girl" ng-model="newUser.sex">
+              Féminin
+          </label>
+        </div>
+      </div>
+    </div>
 
-  <button type="submit" class="postComment btn  btn-xs">Mettre à jour</button>
+    <div class="input-group formProfile">
+      <label class="subHeaderUpdateProfile" for="">Adresse</label>
+      <input id="street" type="text" class="form-control" ng-model="newUser.street" required placeholder="rue"><br/>
+      <input id="zipCode" type="text" class="form-control" ng-model="newUser.zipCode" required placeholder="Code postal"><br/>
+      <input id="city" type="text" class="form-control" ng-model="newUser.city" required placeholder="Commune"><br/>
+    </div>
+    <div class="input-group formProfile">
+      <label class="subHeaderUpdateProfile" for="">Responsable légal</label><br/>
+      <label class="subHeaderUpdateProfile" for="">Prénom</label>
+      <input id="firstname" type="text" class="form-control" ng-model="newUser.legalguardiansfirstname" required placeholder="Prénom">
+    </div>
+    <div class="input-group formProfile">
+      <label class="subHeaderUpdateProfile" for="">Nom</label>
+      <input id="lastname" type="text" class="form-control" ng-model="newUser.legalguardianslastname" required placeholder="Nom">
+    </div>
+    <div class="input-group formProfile formPhoneNumber">
+      <label class="subHeaderUpdateProfile">Téléphone</label>
+      <input type="text" ng-model="newUser.legalguardiansphonenumber" ng-intl-tel-input data-initial-country="fr" placeholder={{newUser.legalguardiansphonenumber}}>
+      <!-- <p>{{newUser.legalguardiansphonenumber}}</p> -->
+    </div>
+    <div class="input-group formProfile">
+      <label class="subHeaderUpdateProfile" for="">Email</label>
+      <input id="email" type="email" class="form-control" ng-model="newUser.legalguardiansemail" required placeholder="Adresse mail">
+    </div>
+    <button type="submit" class="postComment btn  btn-xs">Mettre à jour</button>
+</div>

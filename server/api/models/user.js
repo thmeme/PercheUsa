@@ -19,15 +19,24 @@ const userSchema = new mongoose.Schema({
   },
   studentsphonenumber: {
     type: String,
+    min: 10,
+    max:10
   },
-  birthday: {
-    type: Array,
-  },
+  birthday: String,
   sex: {
-    type: String,
+    type: String
   },
-  address: {
+  street: {
     type: String,
+    required: true
+  },
+  zipCode: {
+    type: String,
+    required: true
+  },
+  city: {
+    type: String,
+    required: true
   },
   email: {
     type: String,
@@ -46,11 +55,14 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false
   },
-  legalguardian: {
+  legalguardiansfirstname: {
+    type: String
+  },
+  legalguardianslastname: {
     type: String
   },
   legalguardiansphonenumber: {
-    type: Number,
+    type: String,
   },
   legalguardiansemail: {
     type: String,
@@ -58,7 +70,6 @@ const userSchema = new mongoose.Schema({
       return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
     }, 'Please fill a valid email address'],
     match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address'],
-    unique: true
   },
   accomodation: {
     type: String
