@@ -75,8 +75,10 @@ const userSchema = new mongoose.Schema({
     type: String
   },
   tosmoke: {
-    type: Boolean,
-    default: false
+    type: String
+  },
+  tosmokehome: {
+    type: String
   },
   health: {
     type: Boolean,
@@ -96,11 +98,39 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false
   },
-  relaxed: {
+  outgoing: {
+    type: Boolean,
+    default: false
+  },
+  quietreserved: {
+    type: Boolean,
+    default: false
+  },
+  casual: {
+    type: Boolean,
+    default: false
+  },
+  rash: {
+    type: Boolean,
+    default: false
+  },
+  withdrawn: {
+    type: Boolean,
+    default: false
+  },
+  cheerful: {
+    type: Boolean,
+    default: false
+  },
+  hardworking: {
     type: Boolean,
     default: false
   },
   sensitive: {
+    type: Boolean,
+    default: false
+  },
+  relaxed: {
     type: Boolean,
     default: false
   },
@@ -109,10 +139,6 @@ const userSchema = new mongoose.Schema({
     default: false
   },
   nervous: {
-    type: Boolean,
-    default: false
-  },
-  outgoing: {
     type: Boolean,
     default: false
   },
@@ -132,10 +158,6 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false
   },
-  quiet: {
-    type: Boolean,
-    default: false
-  },
   talkative: {
     type: Boolean,
     default: false
@@ -145,10 +167,6 @@ const userSchema = new mongoose.Schema({
     default: false
   },
   athletic: {
-    type: Boolean,
-    default: false
-  },
-  fastidius: {
     type: Boolean,
     default: false
   },

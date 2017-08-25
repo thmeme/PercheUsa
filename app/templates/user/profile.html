@@ -45,7 +45,6 @@
         </div>
       </div>
     </div>
-
     <div class="input-group formProfile">
       <label class="subHeaderUpdateProfile" for="">Adresse</label>
       <input id="street" type="text" class="form-control" ng-model="newUser.street" required placeholder="rue"><br/>
@@ -70,5 +69,200 @@
       <label class="subHeaderUpdateProfile" for="">Email</label>
       <input id="email" type="email" class="form-control" ng-model="newUser.legalguardiansemail" required placeholder="Adresse mail">
     </div>
+    <div class="input-group formProfile">
+      <label class="subHeaderUpdateProfile" for="">Préférez-vous un échange avec</label>
+      <div class="form-group">
+        <div class="radio">
+          <label>
+              <input type="radio" name="accomodation" value="boy" ng-model="newUser.accomodation">
+              Un garçon
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+              <input type="radio" name="accomodation" value="girl" ng-model="newUser.accomodation">
+              Une fille
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+              <input type="radio" name="accomodation" value="eitherOne" ng-model="newUser.accomodation">
+              L'un ou l'autre
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="input-group formProfile">
+      <label class="subHeaderUpdateProfile" for="">Fumez-vous ?</label>
+      <div class="form-group">
+        <div class="radio">
+          <label>
+              <input type="radio" name="tosmoke" value="true" ng-model="newUser.tosmoke">
+              Oui
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+              <input type="radio" name="tosmoke" value="false" ng-model="newUser.tosmoke">
+              Non
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="input-group formProfile">
+      <label class="subHeaderUpdateProfile" for="">Y a-t-il des fumeurs dans votre foyer ?</label>
+      <div class="form-group">
+        <div class="radio">
+          <label>
+              <input type="radio" name="tosmokehome" value="true" ng-model="newUser.tosmokehome">
+              Oui
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+              <input type="radio" name="tosmokehome" value="false" ng-model="newUser.tosmokehome">
+              Non
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="input-group formProfile">
+      <div class="form-group">
+        <label>
+               <input type="checkbox" name="health" ng-model="newUser.health"> J'ai des problèmes de santé (y compris des allergies) susceptibles d'influer sur le choix de la famille ou de limiter ma participation aux activités du groupe
+           </label>
+      </div>
+      <div class="input-group" ng-show="newUser.health">
+        <span class="input-group-addon" id="basic-addon1">Précisez</span>
+        <textarea rows="5" type="text" class="form-control" ng-model="newUser.healthdetail" aria-describedby="basic-addon1"></textarea>
+      </div>
+    <div class="input-group formProfile">
+      <div class="form-group">
+        <label>
+               <input type="checkbox" name="health" ng-model="newUser.diet"> Je suis végétarien ou je suis un régme alimentaire spécifique
+           </label>
+      </div>
+      <div class="input-group" ng-show="newUser.diet">
+        <span class="input-group-addon" id="basic-addon1">Précisez</span>
+        <textarea rows="5" type="text" class="form-control" ng-model="newUser.dietdetail" aria-describedby="basic-addon1"></textarea>
+      </div>
+
+
+    </div>
+
+      <label for="">Comment vous décririez-vous ?</label>
+
+      <div class="row">
+        <div class="col-xs-6 col-md-offset-2 col-md-2">
+          <label>
+               <input type="checkbox" name="easygoing" ng-model="newUser.easygoing"> Facile à vivre </label>
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <label>
+               <input type="checkbox" name="outgoing" ng-model="newUser.outgoing"> Extraverti </label>
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <label>
+               <input type="checkbox" name="quietreserved" ng-model="newUser.quietreserved"> Timide </label>
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <label>
+               <input type="checkbox" name="casual" ng-model="newUser.casual"> Décontracté </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-md-offset-2 col-md-2">
+          <label>
+               <input type="checkbox" name="rash" ng-model="newUser.rash"> Impulsif </label>
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <label>
+               <input type="checkbox" name="withdrawn" ng-model="newUser.withdrawn"> Renfermé </label>
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <label>
+               <input type="checkbox" name="cheerful" ng-model="newUser.cheerful"> Enjoué </label>
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <label>
+               <input type="checkbox" name="casual" ng-model="newUser.hardworking"> Travailleur </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-md-offset-2 col-md-2">
+          <label>
+               <input type="checkbox" name="health" ng-model="newUser.sensitive"> Sensible </label>
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <label>
+               <input type="checkbox" name="health" ng-model="newUser.relaxed"> Détendu </label>
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <label>
+               <input type="checkbox" name="health" ng-model="newUser.ambitius"> Ambitieux </label>
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <label>
+               <input type="checkbox" name="health" ng-model="newUser.nervous"> Nerveux </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-md-offset-2 col-md-2">
+          <label>
+               <input type="checkbox" name="health" ng-model="newUser.serious"> Sérieux </label>
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <label>
+               <input type="checkbox" name="health" ng-model="newUser.musical"> Musicien </label>
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <label>
+               <input type="checkbox" name="health" ng-model="newUser.artistic"> Artiste </label>
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <label>
+               <input type="checkbox" name="health" ng-model="newUser.flexible"> Souple </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-md-offset-2 col-md-2">
+          <label>
+               <input type="checkbox" name="health" ng-model="newUser.talkative"> Bavard </label>
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <label>
+               <input type="checkbox" name="health" ng-model="newUser.determined"> Déterminé </label>
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <label>
+               <input type="checkbox" name="health" ng-model="newUser.athletic"> Sportif </label>
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <label>
+               <input type="checkbox" name="health" ng-model="newUser.absentminded"> Distrait </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-md-offset-2 col-md-2">
+          <label>
+               <input type="checkbox" name="health" ng-model="newUser.tolerant"> Tolérant </label>
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <label>
+               <input type="checkbox" name="health" ng-model="newUser.stubborn"> Têtu </label>
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <label>
+               <input type="checkbox" name="health" ng-model="newUser.energetic"> Energique </label>
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <label>
+               <input type="checkbox" name="health" ng-model="newUser.wellorganized"> Organisé </label>
+        </div>
+      </div>
+
+
     <button type="submit" class="postComment btn  btn-xs">Mettre à jour</button>
 </div>
