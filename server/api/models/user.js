@@ -211,12 +211,14 @@ const userSchema = new mongoose.Schema({
   transport: {
     type: String
   },
+  pets: {
+    type: String
+  },
   accomodationcapacity: {
     type: String
   },
   notreceive: {
-    type: Boolean,
-    default: false
+    type: String,
   }
 });
 
