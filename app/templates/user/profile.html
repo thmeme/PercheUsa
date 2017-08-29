@@ -20,7 +20,7 @@
     </div>
     <div class="input-group formProfile formPhoneNumber">
       <label class="subHeaderUpdateProfile">Téléphone</label>
-      <input type="text" ng-model="newUser.studentsphonenumber" ng-intl-tel-input ng-minlength="10" ng-maxlength="10" data-initial-country="fr" placeholder={{newUser.studentsphonenumber}}>
+      <input type="text" ng-model="newUser.studentsphonenumber" ng-intl-tel-input data-initial-country="fr" placeholder={{newUser.studentsphonenumber}}>
       <!-- <p>{{newUser.studentsphonenumber}}</p> -->
     </div>
     <div class="input-group formProfile">
@@ -294,13 +294,13 @@
       <div class="form-group">
         <div class="radio">
           <label>
-              <input type="radio" name="notreceive" value="true" ng-model="newUser.notreceive">
+              <input type="radio" name="tosmokehome" value="true" ng-model="newUser.notreceive">
               Oui
           </label>
         </div>
         <div class="radio">
           <label>
-              <input type="radio" name="notreceive" value="false" ng-model="newUser.notreceive">
+              <input type="radio" name="tosmokehome" value="false" ng-model="newUser.notreceive">
               Non
           </label>
         </div>

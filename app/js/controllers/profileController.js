@@ -5,14 +5,16 @@ angular.module('app')
     console.log($scope.newUser);
     console.log('id', $scope.user._id);
 
-    $scope.newUser = {
-      date: []
-    };
+
 
     function editProfile() {
       UserService.getOne($scope.user._id).then(function(res) {
         console.log('res getOne', res);
         $scope.newUser = res.data;
+        $scope.newUser.birthday = new Date (res.data.birthday);
+        console.log(res.data.birthday);
+
+
       });
     }
     editProfile();
