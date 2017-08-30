@@ -21,12 +21,10 @@
     <div class="input-group formProfile formPhoneNumber">
       <label class="subHeaderUpdateProfile">Téléphone</label>
       <input type="text" ng-model="newUser.studentsphonenumber" ng-intl-tel-input data-initial-country="fr" placeholder={{newUser.studentsphonenumber}}>
-      <!-- <p>{{newUser.studentsphonenumber}}</p> -->
     </div>
     <div class="input-group formProfile">
       <label class="subHeaderUpdateProfile" for="">Date de naissance</label>
       <input id="birthday" type="date" class="form-control" ng-model="newUser.birthday" placeholder={{newUser.birthday | date: "dd-MM-yyyy"}}>
-      <p>{{newUser.birthday | date: "dd-MM-yyyy"}}</p>
     </div>
     <div class="input-group formProfile">
       <label class="subHeaderUpdateProfile" for="">Sexe</label>
@@ -63,7 +61,6 @@
     <div class="input-group formProfile formPhoneNumber">
       <label class="subHeaderUpdateProfile">Téléphone</label>
       <input type="text" ng-model="newUser.legalguardiansphonenumber" ng-intl-tel-input data-initial-country="fr" placeholder={{newUser.legalguardiansphonenumber}}>
-      <!-- <p>{{newUser.legalguardiansphonenumber}}</p> -->
     </div>
     <div class="input-group formProfile">
       <label class="subHeaderUpdateProfile" for="">Email</label>

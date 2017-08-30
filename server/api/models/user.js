@@ -20,23 +20,20 @@ const userSchema = new mongoose.Schema({
   studentsphonenumber: {
     type: String,
     min: 10,
-    max:10
+    max: 10
   },
   birthday: Date,
   sex: {
     type: String
   },
   street: {
-    type: String,
-    required: true
+    type: String
   },
   zipCode: {
-    type: String,
-    required: true
+    type: String
   },
   city: {
-    type: String,
-    required: true
+    type: String
   },
   email: {
     type: String,
