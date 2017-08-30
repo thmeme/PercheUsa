@@ -1,23 +1,28 @@
 angular.module('app')
-  .controller('ProfileController', function($scope, CurrentUser, UserService) {
+  .controller('ProfileController', function($scope, $state, $stateParams, CurrentUser, UserService) {
     $scope.user = CurrentUser.user();
-    $scope.newuser = CurrentUser.user();
-    console.log($scope.newuser);
+    $scope.newUser = CurrentUser.user();
+    console.log($scope.newUser);
     console.log('id', $scope.user._id);
 
-    function Editprofile() {
+
+
+    function editProfile() {
       UserService.getOne($scope.user._id).then(function(res) {
         console.log('res getOne', res);
-        $scope.
+        $scope.newUser = res.data;
+        $scope.newUser.birthday = new Date (res.data.birthday);
+        console.log(res.data.birthday);
+
+
       });
     }
-    Editprofile();
+    editProfile();
 
     $scope.updateProfile = function() {
-      UserService.update($scope.newuser._id, $scope.newuser).then(function(res) {
+      UserService.update($scope.newUser._id, $scope.newUser).then(function(res) {
         console.log('update', res);
       });
+      $state.reload();
     };
-
-
   });

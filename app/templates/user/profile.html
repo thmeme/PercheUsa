@@ -1,20 +1,308 @@
-Profile de {{user.email}}
-<form class="form" name="loginForm" ng-submit="updateProfile()">
-                    <div ng-repeat="error in errors">{{error.error}}</div>
-                    <div class="input-group formProfile">
-                        <label class="subHeaderUpdateProfile" for="">Firstname</label>
-                        <input id="firstname" type="text" class="form-control" ng-model="newuser.firstname" required placeholder="Firstname">
-                    </div>
-                    <div class="input-group formProfile">
-                        <label class="subHeaderUpdateProfile" for="">Lastname</label>
-                        <input id="lastname" type="text" class="form-control" ng-model="newuser.lastname" required placeholder="">
-                    </div>
-                    <div class="input-group formProfile">
-                        <label class="subHeaderUpdateProfile" for="">Email</label>
-                        <input id="email" type="email" class="form-control" ng-model="newuser.email" required placeholder="">
-                    </div>
-                    <div class="input-group formProfile">
-                        <label class="subHeaderUpdateProfile" for="">Password</label>
-                        <input id="password" type="password" class="form-control" ng-model="newuser.password" required placeholder="">
-                    </div>
-                    <button type="submit" class="postComment btn  btn-xs">Mettre à jour</button>
+<div class="container">
+  Profile de {{user.email}}
+  <form class="form" name="loginForm" ng-submit="updateProfile()">
+    <div ng-repeat="error in errors">{{error.error}}</div>
+    <div class="input-group formProfile">
+      <label class="subHeaderUpdateProfile" for="">Prénom</label>
+      <input id="firstname" type="text" class="form-control" ng-model="newUser.firstname" required placeholder="Prénom">
+    </div>
+    <div class="input-group formProfile">
+      <label class="subHeaderUpdateProfile" for="">Nom</label>
+      <input id="lastname" type="text" class="form-control" ng-model="newUser.lastname" required placeholder="Nom">
+    </div>
+    <div class="input-group formProfile">
+      <label class="subHeaderUpdateProfile" for="">Email</label>
+      <input id="email" type="email" class="form-control" ng-model="newUser.email" required placeholder="Adresse mail">
+    </div>
+    <div class="input-group formProfile">
+      <label class="subHeaderUpdateProfile" for="">Password</label>
+      <input id="password" type="password" class="form-control" ng-model="newUser.password" required placeholder="Mot de passe">
+    </div>
+    <div class="input-group formProfile formPhoneNumber">
+      <label class="subHeaderUpdateProfile">Téléphone</label>
+      <input type="text" ng-model="newUser.studentsphonenumber" ng-intl-tel-input data-initial-country="fr" placeholder={{newUser.studentsphonenumber}}>
+    </div>
+    <div class="input-group formProfile">
+      <label class="subHeaderUpdateProfile" for="">Date de naissance</label>
+      <input id="birthday" type="date" class="form-control" ng-model="newUser.birthday" placeholder={{newUser.birthday | date: "dd-MM-yyyy"}}>
+    </div>
+    <div class="input-group formProfile">
+      <label class="subHeaderUpdateProfile" for="">Sexe</label>
+      <div class="form-group">
+        <div class="radio">
+          <label>
+              <input type="radio" name="sex" value="boy" ng-model="newUser.sex">
+              Masculin
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+              <input type="radio" name="sex" value="girl" ng-model="newUser.sex">
+              Féminin
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="input-group formProfile">
+      <label class="subHeaderUpdateProfile" for="">Adresse</label>
+      <input id="street" type="text" class="form-control" ng-model="newUser.street" required placeholder="rue"><br/>
+      <input id="zipCode" type="text" class="form-control" ng-model="newUser.zipCode" required placeholder="Code postal"><br/>
+      <input id="city" type="text" class="form-control" ng-model="newUser.city" required placeholder="Commune"><br/>
+    </div>
+    <div class="input-group formProfile">
+      <label class="subHeaderUpdateProfile" for="">Responsable légal</label><br/>
+      <label class="subHeaderUpdateProfile" for="">Prénom</label>
+      <input id="firstname" type="text" class="form-control" ng-model="newUser.legalguardiansfirstname" required placeholder="Prénom">
+    </div>
+    <div class="input-group formProfile">
+      <label class="subHeaderUpdateProfile" for="">Nom</label>
+      <input id="lastname" type="text" class="form-control" ng-model="newUser.legalguardianslastname" required placeholder="Nom">
+    </div>
+    <div class="input-group formProfile formPhoneNumber">
+      <label class="subHeaderUpdateProfile">Téléphone</label>
+      <input type="text" ng-model="newUser.legalguardiansphonenumber" ng-intl-tel-input data-initial-country="fr" placeholder={{newUser.legalguardiansphonenumber}}>
+    </div>
+    <div class="input-group formProfile">
+      <label class="subHeaderUpdateProfile" for="">Email</label>
+      <input id="email" type="email" class="form-control" ng-model="newUser.legalguardiansemail" required placeholder="Adresse mail">
+    </div>
+    <div class="input-group formProfile">
+      <label class="subHeaderUpdateProfile" for="">Préférez-vous un échange avec</label>
+      <div class="form-group">
+        <div class="radio">
+          <label>
+              <input type="radio" name="accomodation" value="boy" ng-model="newUser.accomodation">
+              Un garçon
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+              <input type="radio" name="accomodation" value="girl" ng-model="newUser.accomodation">
+              Une fille
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+              <input type="radio" name="accomodation" value="eitherOne" ng-model="newUser.accomodation">
+              L'un ou l'autre
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="input-group formProfile">
+      <label class="subHeaderUpdateProfile" for="">Fumez-vous ?</label>
+      <div class="form-group">
+        <div class="radio">
+          <label>
+              <input type="radio" name="tosmoke" value="true" ng-model="newUser.tosmoke">
+              Oui
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+              <input type="radio" name="tosmoke" value="false" ng-model="newUser.tosmoke">
+              Non
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="input-group formProfile">
+      <label class="subHeaderUpdateProfile" for="">Y a-t-il des fumeurs dans votre foyer ?</label>
+      <div class="form-group">
+        <div class="radio">
+          <label>
+              <input type="radio" name="tosmokehome" value="true" ng-model="newUser.tosmokehome">
+              Oui
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+              <input type="radio" name="tosmokehome" value="false" ng-model="newUser.tosmokehome">
+              Non
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>
+               <input type="checkbox" name="health" ng-model="newUser.health"> J'ai des problèmes de santé (y compris des allergies) susceptibles d'influer sur le choix de la famille ou de limiter ma participation aux activités du groupe
+           </label>
+    </div>
+    <div class="input-group" ng-show="newUser.health">
+      <span class="input-group-addon" id="basic-addon1">Précisez</span>
+      <textarea rows="2" type="text" class="form-control" ng-model="newUser.healthdetail" aria-describedby="basic-addon1"></textarea>
+    </div>
+    <div class="form-group">
+      <label>
+               <input type="checkbox" name="health" ng-model="newUser.diet"> Je suis végétarien ou je suis un régme alimentaire spécifique
+           </label>
+    </div>
+    <div class="input-group" ng-show="newUser.diet">
+      <span class="input-group-addon" id="basic-addon1">Précisez</span>
+      <textarea rows="2" type="text" class="form-control" ng-model="newUser.dietdetail" aria-describedby="basic-addon1"></textarea>
+    </div>
+    <label for="">Comment vous décririez-vous ?</label>
+    <div class="row">
+      <div class="col-xs-6 col-md-offset-2 col-md-2">
+        <label>
+               <input type="checkbox" name="easygoing" ng-model="newUser.easygoing"> Facile à vivre </label>
+      </div>
+      <div class="col-xs-6 col-md-2">
+        <label>
+               <input type="checkbox" name="outgoing" ng-model="newUser.outgoing"> Extraverti </label>
+      </div>
+      <div class="col-xs-6 col-md-2">
+        <label>
+               <input type="checkbox" name="quietreserved" ng-model="newUser.quietreserved"> Timide </label>
+      </div>
+      <div class="col-xs-6 col-md-2">
+        <label>
+               <input type="checkbox" name="casual" ng-model="newUser.casual"> Décontracté </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-md-offset-2 col-md-2">
+        <label>
+               <input type="checkbox" name="rash" ng-model="newUser.rash"> Impulsif </label>
+      </div>
+      <div class="col-xs-6 col-md-2">
+        <label>
+               <input type="checkbox" name="withdrawn" ng-model="newUser.withdrawn"> Renfermé </label>
+      </div>
+      <div class="col-xs-6 col-md-2">
+        <label>
+               <input type="checkbox" name="cheerful" ng-model="newUser.cheerful"> Enjoué </label>
+      </div>
+      <div class="col-xs-6 col-md-2">
+        <label>
+               <input type="checkbox" name="casual" ng-model="newUser.hardworking"> Travailleur </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-md-offset-2 col-md-2">
+        <label>
+               <input type="checkbox" name="health" ng-model="newUser.sensitive"> Sensible </label>
+      </div>
+      <div class="col-xs-6 col-md-2">
+        <label>
+               <input type="checkbox" name="health" ng-model="newUser.relaxed"> Détendu </label>
+      </div>
+      <div class="col-xs-6 col-md-2">
+        <label>
+               <input type="checkbox" name="health" ng-model="newUser.ambitius"> Ambitieux </label>
+      </div>
+      <div class="col-xs-6 col-md-2">
+        <label>
+               <input type="checkbox" name="health" ng-model="newUser.nervous"> Nerveux </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-md-offset-2 col-md-2">
+        <label>
+               <input type="checkbox" name="health" ng-model="newUser.serious"> Sérieux </label>
+      </div>
+      <div class="col-xs-6 col-md-2">
+        <label>
+               <input type="checkbox" name="health" ng-model="newUser.musical"> Musicien </label>
+      </div>
+      <div class="col-xs-6 col-md-2">
+        <label>
+               <input type="checkbox" name="health" ng-model="newUser.artistic"> Artiste </label>
+      </div>
+      <div class="col-xs-6 col-md-2">
+        <label>
+               <input type="checkbox" name="health" ng-model="newUser.flexible"> Souple </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-md-offset-2 col-md-2">
+        <label>
+               <input type="checkbox" name="health" ng-model="newUser.talkative"> Bavard </label>
+      </div>
+      <div class="col-xs-6 col-md-2">
+        <label>
+               <input type="checkbox" name="health" ng-model="newUser.determined"> Déterminé </label>
+      </div>
+      <div class="col-xs-6 col-md-2">
+        <label>
+               <input type="checkbox" name="health" ng-model="newUser.athletic"> Sportif </label>
+      </div>
+      <div class="col-xs-6 col-md-2">
+        <label>
+               <input type="checkbox" name="health" ng-model="newUser.absentminded"> Distrait </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-md-offset-2 col-md-2">
+        <label>
+               <input type="checkbox" name="health" ng-model="newUser.tolerant"> Tolérant </label>
+      </div>
+      <div class="col-xs-6 col-md-2">
+        <label>
+               <input type="checkbox" name="health" ng-model="newUser.stubborn"> Têtu </label>
+      </div>
+      <div class="col-xs-6 col-md-2">
+        <label>
+               <input type="checkbox" name="health" ng-model="newUser.energetic"> Energique </label>
+      </div>
+      <div class="col-xs-6 col-md-2">
+        <label>
+               <input type="checkbox" name="health" ng-model="newUser.wellorganized"> Organisé </label>
+      </div>
+    </div>
+    <div>
+      <label for="">Pourquoi souhaitez-vous participer à cet échange ?</label>
+      <textarea rows="2" type="text" class="form-control" ng-model="newUser.whyexchange" aria-describedby="basic-addon1"></textarea>
+    </div>
+    <div>
+      <label for="">Décrivez-vous (personnalité, description physique, ce que vous aimez faire, n'aimez pas faire, centres d'intéret). Soyez précis.</label>
+      <textarea rows="5" type="text" class="form-control" ng-model="newUser.studentsdescription" aria-describedby="basic-addon1"></textarea>
+    </div>
+    <div>
+      <label for="">Comment vos amis vous décrivent-ils ? Faites remplir par un/une ami(e)</label>
+      <textarea rows="3" type="text" class="form-control" ng-model="newUser.friendsdescription" aria-describedby="basic-addon1"></textarea>
+    </div>
+    <div>
+      <label for="">Qu'envisagez-vous de faire à l'avenir ?</label>
+      <textarea rows="2" type="text" class="form-control" ng-model="newUser.future" aria-describedby="basic-addon1"></textarea>
+    </div>
+    <div>
+      <label for="">Décrivez votre famille et votre environnement. Sortez-vous souvent ou êtes-vous plutôt casanier ? Suivez-vous un mode de vie des très organisé ou non ? Passez-vous beaucoup de temps en famille, à l'extérieur ou à la maison ? Vous rendez-vous à des expositions, des rencontres sportives ?</label>
+      <textarea rows="2" type="text" class="form-control" ng-model="newUser.familydescription" aria-describedby="basic-addon1"></textarea>
+    </div>
+    <div>
+      <label for="">Combien de personnes vivent dans votre foyer ? </label>
+      <textarea rows="2" type="text" class="form-control" ng-model="newUser.familycomposition" aria-describedby="basic-addon1"></textarea>
+    </div>
+    <div>
+      <label for="">Avez-vous des animaux domestiques ? Si oui, précisez.</label>
+      <textarea rows="2" type="text" class="form-control" ng-model="newUser.pets" aria-describedby="basic-addon1"></textarea>
+    </div>
+    <div>
+      <label for="">Précisez le moyen de transport utilisé et le temps de trajet pour vous rendre au lycée.</label>
+      <textarea rows="2" type="text" class="form-control" ng-model="newUser.transport" aria-describedby="basic-addon1"></textarea>
+    </div>
+    <div>
+      <label for="">Ajoutez toute information utile concernant votre capacité d'accueil.</label>
+      <textarea rows="2" type="text" class="form-control" ng-model="newUser.accomodationcapacity" aria-describedby="basic-addon1"></textarea>
+    </div>
+    <div class="input-group formProfile">
+      <label class="subHeaderUpdateProfile" for="">Verriez-vous un inconvénient à ne pas recevoir de correspodant ?</label>
+      <div class="form-group">
+        <div class="radio">
+          <label>
+              <input type="radio" name="tosmokehome" value="true" ng-model="newUser.notreceive">
+              Oui
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+              <input type="radio" name="tosmokehome" value="false" ng-model="newUser.notreceive">
+              Non
+          </label>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="postComment btn  btn-xs">Mettre à jour</button>
+  </form>
+</div>

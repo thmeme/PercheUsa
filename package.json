@@ -22,8 +22,10 @@
     "lineman-angular": "^0.3.0",
     "lineman-less": "^0.1.0",
     "method-override": "",
+    "moment": "^2.18.1",
     "mongoose": "",
-    "morgan": ""
+    "morgan": "",
+    "ng-intl-tel-input": "^2.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",

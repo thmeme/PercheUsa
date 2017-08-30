@@ -19,15 +19,21 @@ const userSchema = new mongoose.Schema({
   },
   studentsphonenumber: {
     type: String,
+    min: 10,
+    max: 10
   },
-  birthday: {
-    type: Date,
-  },
+  birthday: Date,
   sex: {
-    type: String,
+    type: String
   },
-  address: {
-    type: String,
+  street: {
+    type: String
+  },
+  zipCode: {
+    type: String
+  },
+  city: {
+    type: String
   },
   email: {
     type: String,
@@ -46,27 +52,30 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false
   },
-  legalguardian: {
+  legalguardiansfirstname: {
+    type: String
+  },
+  legalguardianslastname: {
     type: String
   },
   legalguardiansphonenumber: {
-    type: Number,
+    type: String,
   },
   legalguardiansemail: {
     type: String,
-    required: [true, 'Email address is required'],
     validate: [function(email) {
       return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
     }, 'Please fill a valid email address'],
     match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address'],
-    unique: true
   },
   accomodation: {
     type: String
   },
   tosmoke: {
-    type: Boolean,
-    default: false
+    type: String
+  },
+  tosmokehome: {
+    type: String
   },
   health: {
     type: Boolean,
@@ -86,11 +95,39 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false
   },
-  relaxed: {
+  outgoing: {
+    type: Boolean,
+    default: false
+  },
+  quietreserved: {
+    type: Boolean,
+    default: false
+  },
+  casual: {
+    type: Boolean,
+    default: false
+  },
+  rash: {
+    type: Boolean,
+    default: false
+  },
+  withdrawn: {
+    type: Boolean,
+    default: false
+  },
+  cheerful: {
+    type: Boolean,
+    default: false
+  },
+  hardworking: {
     type: Boolean,
     default: false
   },
   sensitive: {
+    type: Boolean,
+    default: false
+  },
+  relaxed: {
     type: Boolean,
     default: false
   },
@@ -99,10 +136,6 @@ const userSchema = new mongoose.Schema({
     default: false
   },
   nervous: {
-    type: Boolean,
-    default: false
-  },
-  outgoing: {
     type: Boolean,
     default: false
   },
@@ -122,10 +155,6 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false
   },
-  quiet: {
-    type: Boolean,
-    default: false
-  },
   talkative: {
     type: Boolean,
     default: false
@@ -135,10 +164,6 @@ const userSchema = new mongoose.Schema({
     default: false
   },
   athletic: {
-    type: Boolean,
-    default: false
-  },
-  fastidius: {
     type: Boolean,
     default: false
   },
@@ -183,12 +208,14 @@ const userSchema = new mongoose.Schema({
   transport: {
     type: String
   },
+  pets: {
+    type: String
+  },
   accomodationcapacity: {
     type: String
   },
   notreceive: {
-    type: Boolean,
-    default: false
+    type: String,
   }
 });
 
