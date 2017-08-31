@@ -12,6 +12,8 @@ module.exports = function(lineman) {
             vendor: [
                 "vendor/js/jquery.js",
                 "vendor/js/bootstrap.js",
+                "vendor/js/material.min.js.js",
+                "vendor/js/material-kit.js",
                 "vendor/js/angular.js",
                 "vendor/js/**/*.js"
             ],
