@@ -12,8 +12,6 @@ module.exports = function(lineman) {
             vendor: [
                 "vendor/js/jquery.js",
                 "vendor/js/bootstrap.js",
-                "vendor/js/material.min.js.js",
-                "vendor/js/material-kit.js",
                 "vendor/js/angular.js",
                 "vendor/js/**/*.js"
             ],
@@ -30,7 +28,7 @@ module.exports = function(lineman) {
         less: {
             compile: {
                 options: {
-                    paths: ["vendor/css/boostrap.css", "vendor/css/bootstrap-theme.css", "app/css/**/*.less"]
+                    paths: ["vendor/css/material-kit.css", "vendor/css/bootstrap-theme.css", "app/css/**/*.less"]
                 }
             }
         }
