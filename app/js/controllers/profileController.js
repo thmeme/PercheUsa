@@ -1,5 +1,5 @@
 angular.module('app')
-  .controller('ProfileController', function($scope, $state, $stateParams, CurrentUser, UserService) {
+  .controller('ProfileController', function($scope, $state, $timeout, $stateParams, CurrentUser, UserService) {
     $scope.user = CurrentUser.user();
     $scope.newUser = CurrentUser.user();
     console.log($scope.newUser);
