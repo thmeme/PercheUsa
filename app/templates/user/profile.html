@@ -2,7 +2,7 @@
   Profile de {{user.email}}
   <form class="form" name="loginForm" ng-submit="updateProfile()">
     <div ng-repeat="error in errors">{{error.error}}</div>
-    <div class="input-group formProfile">
+    <div class="input-group formProfile" has-info>
       <label class="subHeaderUpdateProfile" for="">Prénom</label>
       <input id="firstname" type="text" class="form-control" ng-model="newUser.firstname" required placeholder="Prénom">
     </div>
