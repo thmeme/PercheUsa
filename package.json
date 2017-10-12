@@ -2,6 +2,10 @@
   "name": "mean-lineman",
   "description": "Just another MEAN Stack",
   "version": "1.0.0",
+  "engines": {
+    "node": "8.1.2",
+    "npm": "^4"
+  },
   "private": true,
   "author": "Jean-Baptiste Pasquier",
   "scripts": {
@@ -24,7 +28,9 @@
     "moment": "^2.18.1",
     "mongoose": "",
     "morgan": "",
-    "ng-intl-tel-input": "^2.0.0"
+    "ng-file-upload": "^12.2.13",
+    "ng-intl-tel-input": "^2.0.0",
+    "node-dir": "^0.1.17"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",
