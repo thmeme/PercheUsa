@@ -8,6 +8,13 @@ import db from './db';
 import api from './api';
 
 var app = express();
+
+/* Config Upload */
+let publicDir = path.join(__dirname, '../public/');
+app.use(express.static(publicDir));
+/* End Config upload */
+
+
 app.server = http.createServer(app);
 
 app.use(cors());
